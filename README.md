@@ -1,7 +1,7 @@
-# Radian Resources
+# Radian UI Resources
 
 <p align="center">
-  <a href="https://radianos.com">
+  <a href="https://radianui.com">
     <img src="https://raw.githubusercontent.com/Radian-os/radian-resources/main/packages/brand-logos/src/radian.svg" alt="Radian logo" width="120" height="120" />
   </a>
 </p>
@@ -13,7 +13,7 @@
 
 <p align="center">
   <a href="https://github.com/Radian-os/radian-resources/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Radian-os/radian-resources?style=flat-square" alt="License" /></a>
-  <a href="https://radianos.com"><img src="https://img.shields.io/badge/design_system-Radian-blue?style=flat-square" alt="Radian Design System" /></a>
+  <a href="https://radianui.com"><img src="https://img.shields.io/badge/design_system-Radian-blue?style=flat-square" alt="Radian Design System" /></a>
   <a href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/cdn-jsDelivr-orange?style=flat-square" alt="jsDelivr CDN" /></a>
 </p>
 
@@ -21,7 +21,7 @@
 
 ## ⚡ Overview
 
-[Radian](https://radianos.com) is an open-source React component library built on Radix UI and Tailwind CSS.
+[Radian](https://radianui.com) is an open-source React component library built on Radix UI and Tailwind CSS.
 
 **Radian Resources** (`radian-resources`) is a dedicated public repository for hosting and serving Radian's static design assets—such as user avatars, brand logos, country flags, and file-type icons. 
 
