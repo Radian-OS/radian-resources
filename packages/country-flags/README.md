@@ -16,18 +16,18 @@ This package contains **258 flag designs**, including countries, territories, re
 | Shapes | `flat`, `circle`, `squircle` |
 | Format | Transparent PNG |
 
-Assets use the following directory and filename structure:
+Assets use the following directory and filename structure. The directory identifies the size and shape, so filenames contain only the flag name:
 
 ```text
-src/{size}px/{shape}/{name}-{shape}-{size}.png
+src/{size}px/{shape}/{name}.png
 ```
 
 For example:
 
 ```text
-src/32px/circle/Japan-circle-32.png
-src/64px/flat/United States-flat-64.png
-src/128px/squircle/Nepal-squircle-128.png
+src/32px/circle/Japan.png
+src/64px/flat/United States.png
+src/128px/squircle/Nepal.png
 ```
 
 File names are case-sensitive. Use the exact asset name from the relevant shape directory, and URL-encode spaces as `%20` when constructing a URL.
@@ -39,13 +39,13 @@ File names are case-sensitive. Use the exact asset name from the relevant shape 
 No installation is required. Load any flag directly through jsDelivr using this URL pattern:
 
 ```text
-https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/country-flags/src/{size}px/{shape}/{name}-{shape}-{size}.png
+https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/country-flags/src/{size}px/{shape}/{name}.png
 ```
 
 Example:
 
 ```text
-https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/country-flags/src/32px/circle/Japan-circle-32.png
+https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/country-flags/src/32px/circle/Japan.png
 ```
 
 ---
@@ -66,7 +66,7 @@ export default function CountryFlag({
   size = 32,
   shape = 'circle',
 }: CountryFlagProps) {
-  const fileName = `${name}-${shape}-${size}.png`;
+  const fileName = `${name}.png`;
   const src = `https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/country-flags/src/${size}px/${shape}/${encodeURIComponent(fileName)}`;
 
   return (
@@ -86,7 +86,7 @@ When using the Next.js image optimizer, allow `cdn.jsdelivr.net` in your `next.c
 
 ```html
 <img
-  src="https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/country-flags/src/32px/circle/Japan-circle-32.png"
+  src="https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/country-flags/src/32px/circle/Japan.png"
   alt="Japan flag"
   width="32"
   height="32"

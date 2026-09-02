@@ -50,7 +50,7 @@ This repository contains the following asset collections. Click on a category na
 | :--- | :--- | :--- |
 | **Avatars** | [packages/avatars](./packages/avatars/README.md) | 200 transparent, high-quality PNG user avatars for UI mocks. |
 | **Brand Logos** | [packages/brand-logos](./packages/brand-logos/README.md) | Scalable SVG logos for popular brands and integrations. |
-| **Country Flags** | [packages/country-flags](./packages/country-flags/README.md) | Optimized SVG country flags for country selectors and user profiles. |
+| **Country Flags** | [packages/country-flags](./packages/country-flags/README.md) | PNG country flags in multiple sizes and shapes for selectors and user profiles. |
 | **File Icons** | [packages/file-icons](./packages/file-icons/README.md) | Consistent, modern SVG file-type icons. |
 
 ---
@@ -58,4 +58,3 @@ This repository contains the following asset collections. Click on a category na
 ## 📄 License
 
 All assets in this repository are licensed under the MIT License unless otherwise specified. Feel free to use them in both commercial and personal projects.
-
