@@ -1,55 +1,94 @@
 # Country Flags
 
 <p align="center">
-  <strong>Beautiful, optimized SVG country flags for locale selectors, phone inputs, and dashboard tables.</strong>
+  <strong>Ready-to-use PNG flags in multiple sizes and shapes for selectors, profiles, tables, and other interfaces.</strong>
 </p>
 
-This package provides a comprehensive collection of clean, pixel-perfect SVG world flags. Optimized for fast rendering, these flags are ideal for building multi-lingual UI selectors, checkout flows, and user profile information.
+This package contains **258 flag designs**, including countries, territories, regions, and organizations. Every design is available in **7 sizes** and **3 shapes**, for a total of **5,418 PNG assets**.
 
 ---
 
-## 🚀 CDN Usage (Zero Install)
+## Available Variants
 
-You do not need to install this package. Hotlink the SVG flags directly via the jsDelivr global CDN using the ISO 3166-1 alpha-2 country code:
+| Option | Values |
+| --- | --- |
+| Sizes | `16px`, `24px`, `32px`, `64px`, `128px`, `256px`, `512px` |
+| Shapes | `flat`, `circle`, `squircle` |
+| Format | Transparent PNG |
+
+Assets use the following directory and filename structure:
 
 ```text
-https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/country-flags/src/{country-code}.svg
+src/{size}px/{shape}/{name}-{shape}-{size}.png
 ```
 
-*Replace `{country-code}` with the lowercase two-letter code of the country (e.g., `us.svg`, `gb.svg`, `ca.svg`, `jp.svg`).*
+For example:
+
+```text
+src/32px/circle/Japan-circle-32.png
+src/64px/flat/United States-flat-64.png
+src/128px/squircle/Nepal-squircle-128.png
+```
+
+File names are case-sensitive. Use the exact asset name from the relevant shape directory, and URL-encode spaces as `%20` when constructing a URL.
 
 ---
 
-## 🛠️ Code Example (React / Next.js)
+## CDN Usage (Zero Install)
 
-To display a flag alongside a country name or select input:
+No installation is required. Load any flag directly through jsDelivr using this URL pattern:
+
+```text
+https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/country-flags/src/{size}px/{shape}/{name}-{shape}-{size}.png
+```
+
+Example:
+
+```text
+https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/country-flags/src/32px/circle/Japan-circle-32.png
+```
+
+---
+
+## React / Next.js Example
 
 ```tsx
 import Image from 'next/image';
 
-interface CountrySelectorProps {
-  countryCode: string; // e.g., 'us', 'jp', 'de'
-  countryName: string;
+interface CountryFlagProps {
+  name: string;
+  size?: 16 | 24 | 32 | 64 | 128 | 256 | 512;
+  shape?: 'flat' | 'circle' | 'squircle';
 }
 
-export default function CountryFlag({ countryCode, countryName }: CountrySelectorProps) {
+export default function CountryFlag({
+  name,
+  size = 32,
+  shape = 'circle',
+}: CountryFlagProps) {
+  const fileName = `${name}-${shape}-${size}.png`;
+  const src = `https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/country-flags/src/${size}px/${shape}/${encodeURIComponent(fileName)}`;
+
   return (
-    <div className="flex items-center gap-2">
-      <Image 
-        src={`https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/country-flags/src/${countryCode.toLowerCase()}.svg`}
-        alt={`${countryName} flag`}
-        width={24}
-        height={16}
-        className="rounded-sm object-cover"
-      />
-      <span>{countryName}</span>
-    </div>
+    <Image
+      src={src}
+      alt={`${name} flag`}
+      width={size}
+      height={size}
+    />
   );
 }
 ```
 
-### HTML Example
-```html
-<img src="https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/country-flags/src/us.svg" alt="United States" width="24" height="16" />
-```
+When using the Next.js image optimizer, allow `cdn.jsdelivr.net` in your `next.config.js` or `next.config.mjs` remote image configuration.
 
+### HTML Example
+
+```html
+<img
+  src="https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/country-flags/src/32px/circle/Japan-circle-32.png"
+  alt="Japan flag"
+  width="32"
+  height="32"
+/>
+```
