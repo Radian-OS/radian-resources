@@ -49,9 +49,12 @@ This repository contains the following asset collections. Click on a category na
 | Asset Category | Directory / Documentation | Description |
 | :--- | :--- | :--- |
 | **Avatars** | [packages/avatars](./packages/avatars/README.md) | 200 transparent, high-quality PNG user avatars for UI mocks. |
+| **Avatar Backgrounds** | [packages/avatars-background](./packages/avatars-background/README.md) | 58 solid, gradient, and image backgrounds for UI avatars. |
 | **Brand Logos** | [packages/brand-logos](./packages/brand-logos/README.md) | Scalable SVG logos for popular brands and integrations. |
+| **Chart Thumbnails** | [packages/charts-thumbnail](./packages/charts-thumbnail/README.md) | Pre-rendered light and dark mode chart thumbnail previews. |
 | **Country Flags** | [packages/country-flags](./packages/country-flags/README.md) | PNG country flags in multiple sizes and shapes for selectors and user profiles. |
 | **File Icons** | [packages/file-icons](./packages/file-icons/README.md) | Consistent, modern SVG file-type icons. |
+| **Shadow Overlays** | [packages/shadow](./packages/shadow/README.md) | Pre-rendered shadow overlays for UI layout depth. |
 
 ---
 
