@@ -1,47 +1,106 @@
 # Brand Logos
 
 <p align="center">
-  <strong>Scalable, modern SVG brand logos and social icons for integration lists and UI controls.</strong>
+  <strong>Ready-to-use brand icons and wordmarks for light and dark interfaces.</strong>
 </p>
 
-This package contains high-quality, lightweight brand and product logo SVGs for standard web integrations, authentication providers (Google, GitHub, Apple, etc.), and tech stacks.
+This package contains **20 brands** in two themes, two variants, and both SVG and PNG formats—a total of **160 assets**. Every filename and directory is lowercase and URL-safe for predictable CDN use.
 
 ---
 
-## 🚀 CDN Usage (Zero Install)
+## Available Variants
 
-You do not need to install this package. You can hotlink and embed the SVGs directly into your applications using the jsDelivr global CDN:
+| Option | Values |
+| --- | --- |
+| Theme | `light`, `dark` |
+| Variant | `icon`, `wordmark` |
+| Format | SVG, transparent PNG |
+| PNG size | Icons: `48×48`; wordmarks: `48px` high |
+
+Use `light` assets on light surfaces and `dark` assets on dark surfaces.
+
+### Brands
+
+`adobe`, `angular`, `anthropic`, `bitbucket`, `canva`, `claude`, `figma`, `framer`, `gemini`, `github`, `gitlab`, `google-deepmind`, `miro`, `nextjs`, `npm`, `openai`, `react`, `stack-overflow`, `tailwind-css`, `vue`
+
+---
+
+## File Structure
+
+SVG assets follow this pattern:
 
 ```text
-https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/brand-logos/src/{logo-name}.svg
+src/{theme}/svg/{variant}/{brand}.svg
 ```
 
-*Replace `{logo-name}` with the brand filename (e.g., `radian.svg`, `github.svg`, `google.svg`).*
+PNG assets follow this pattern:
+
+```text
+src/{theme}/png/48px/{variant}/{brand}.png
+```
+
+Examples:
+
+```text
+src/light/svg/icon/github.svg
+src/dark/svg/wordmark/openai.svg
+src/light/png/48px/icon/tailwind-css.png
+```
 
 ---
 
-## 🛠️ Code Example (React / Next.js)
+## CDN Usage (Zero Install)
 
-To display these SVG brand logos directly in your web applications, you can use standard image tags or remote HTML loading:
+No installation is required. Load an asset directly through the jsDelivr CDN:
+
+```text
+https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/brand-logos/src/{theme}/svg/{variant}/{brand}.svg
+```
+
+For PNG:
+
+```text
+https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/brand-logos/src/{theme}/png/48px/{variant}/{brand}.png
+```
+
+For immutable production URLs, replace `@main` with a release tag after the assets are included in a release.
+
+### HTML Example
+
+```html
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/brand-logos/src/dark/svg/wordmark/github.svg"
+  />
+  <img
+    src="https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/brand-logos/src/light/svg/wordmark/github.svg"
+    alt="GitHub"
+    width="180"
+    height="48"
+  />
+</picture>
+```
+
+### React / Next.js Example
 
 ```tsx
 import Image from 'next/image';
 
 export default function BrandLogo() {
   return (
-    <Image 
-      src="https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/brand-logos/src/radian.svg"
-      alt="Radian Logo"
-      width={32}
-      height={32}
-      className="h-8 w-8"
+    <Image
+      src="https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/brand-logos/src/light/svg/icon/github.svg"
+      alt="GitHub"
+      width={48}
+      height={48}
     />
   );
 }
 ```
 
-### HTML Example
-```html
-<img src="https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/brand-logos/src/radian.svg" alt="Radian Logo" width="32" height="32" />
-```
+When using the Next.js image optimizer, allow `cdn.jsdelivr.net` in your `next.config.js` or `next.config.mjs` remote image configuration.
 
+---
+
+Brand names and logos are trademarks of their respective owners. Inclusion here does not imply endorsement or affiliation.

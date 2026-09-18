@@ -1,12 +1,6 @@
 # Radian UI Resources
 
 <p align="center">
-  <a href="https://radianui.com">
-    <img src="https://raw.githubusercontent.com/Radian-os/radian-resources/main/packages/brand-logos/src/radian.svg" alt="Radian logo" width="120" height="120" />
-  </a>
-</p>
-
-<p align="center">
   <strong>The official static marketing and UI asset hub for the Radian Design System.</strong><br />
   High-quality, optimized, free design assets served directly via a global CDN.
 </p>
@@ -38,7 +32,7 @@ https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/{package-na
 ```
 
 - **`{package-name}`**: The subfolder name under `packages/` (e.g., `avatars`, `brand-logos`).
-- **`{file}`**: The filename of the asset (e.g., `1.png`, `radian.svg`).
+- **`{file}`**: The path to the asset inside that package (e.g., `1.png`, `light/svg/icon/github.svg`).
 
 ---
 
@@ -50,7 +44,7 @@ This repository contains the following asset collections. Click on a category na
 | :--- | :--- | :--- |
 | **Avatars** | [packages/avatars](./packages/avatars/README.md) | 200 transparent, high-quality PNG user avatars for UI mocks. |
 | **Avatar Backgrounds** | [packages/avatars-background](./packages/avatars-background/README.md) | 58 solid, gradient, and image backgrounds for UI avatars. |
-| **Brand Logos** | [packages/brand-logos](./packages/brand-logos/README.md) | Scalable SVG logos for popular brands and integrations. |
+| **Brand Logos** | [packages/brand-logos](./packages/brand-logos/README.md) | 20 brand logos in light and dark themes, icon and wordmark variants, and SVG and PNG formats. |
 | **Chart Thumbnails** | [packages/charts-thumbnail](./packages/charts-thumbnail/README.md) | Pre-rendered light and dark mode chart thumbnail previews. |
 | **Country Flags** | [packages/country-flags](./packages/country-flags/README.md) | PNG country flags in multiple sizes and shapes for selectors and user profiles. |
 | **File Icons** | [packages/file-icons](./packages/file-icons/README.md) | Consistent, modern SVG file-type icons. |
