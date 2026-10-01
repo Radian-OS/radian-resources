@@ -1,12 +1,12 @@
 # Brand Logos
 
 <p align="center">
-  <strong>Ready-to-use brand icons and wordmarks for light and dark interfaces.</strong>
+  <strong>Ready-to-use scalable brand icons and wordmarks for light and dark interfaces.</strong>
 </p>
 
-This package contains **244 brands** across **12 categories**. Every brand has a colored PNG icon and wordmark for both light and dark interfaces, for a total of **976 PNG assets**. A curated set of 20 brands is also available as SVG.
+This package contains **244 brands** across **12 categories**. Every brand provides scalable SVG icons and wordmarks for both light and dark interfaces, across colored and neutral colorways, for a total of **1,952 SVG assets**.
 
-All canonical directory names and filenames are lowercase, kebab-case, and URL-safe. The machine-readable [manifest](./manifest.json) is the source of truth for categories, brand slugs, coverage, and the path template.
+SVGs serve as the single source of truth—infinitely scalable, razor-sharp on all display densities, and lightweight. All canonical directory names and filenames are lowercase, kebab-case, and URL-safe. The machine-readable [manifest](./manifest.json) is the source of truth for categories, brand slugs, coverage, and the path template.
 
 ---
 
@@ -15,25 +15,18 @@ All canonical directory names and filenames are lowercase, kebab-case, and URL-s
 | Option | Values |
 | --- | --- |
 | Theme | `light`, `dark` |
-| Colorway | `colored` |
+| Colorway | `colored`, `neutral` |
 | Variant | `icon`, `wordmark` |
-| Format | PNG for all 244 brands; SVG for 20 brands |
-| PNG canvas | Most icons are `64×64`; most wordmarks are `240×64` |
+| Format | `SVG` (100% coverage across all 244 brands) |
+| Native Canvas | Icons are designed on a `24×24` grid; wordmarks are designed on a `180×48` canvas |
 
-`light` and `dark` describe the interface surface the artwork is optimized for. `colored` describes the logo treatment.
+`light` and `dark` describe the interface surface the artwork is optimized for.
 
-The colorway is an independent path segment so future monochrome assets can be added as `black` and `white` under both themes:
+`colored` describes the official full-color brand artwork.
 
-```text
-src/light/black/...
-src/dark/black/...
-src/light/white/...
-src/dark/white/...
-```
+`neutral` provides monochrome brand artwork adapted for the interface (`#26282C` dark slate for light surfaces, `#F7F7F8` crisp off-white for dark surfaces).
 
-Those colorways are reserved in the manifest but do not contain assets yet.
-
-The original canvas dimensions are preserved. A small number of logos use a wider or taller native canvas, so consumers should constrain artwork with CSS such as `max-width`, `max-height`, and `object-fit: contain` rather than assuming every file has identical dimensions.
+Because SVG assets are scalable vector graphics, consumers can freely scale them with CSS or HTML dimensions (such as `width`, `height`, `max-width`, and `object-fit: contain`).
 
 ---
 
@@ -42,16 +35,16 @@ The original canvas dimensions are preserved. A small number of logos use a wide
 Canonical assets follow this pattern:
 
 ```text
-src/{theme}/{colorway}/{format}/{category}/{variant}/{brand}.{format}
+src/{theme}/{colorway}/{category}/{variant}/{brand}.svg
 ```
 
 Examples:
 
 ```text
-src/light/colored/png/development/icon/github.png
-src/dark/colored/png/ai/wordmark/openai.png
-src/light/colored/png/frameworks/icon/tailwind-css.png
-src/dark/colored/svg/design-creative/wordmark/figma.svg
+src/light/colored/development/icon/github.svg
+src/dark/colored/ai/wordmark/openai.svg
+src/light/neutral/frameworks/icon/tailwind-css.svg
+src/dark/neutral/design-creative/wordmark/figma.svg
 ```
 
 The category is part of the URL. Use the manifest or the catalog below to resolve it.
@@ -62,7 +55,7 @@ The category is part of the URL. Use the manifest or the catalog below to resolv
 
 | Category | Count | Brand slugs |
 | --- | ---: | --- |
-| AI (`ai`) | 22 | `anthropic`, `apple-intelligence`, `claude`, `cohere`, `copilot`, `cursor`, `elevenlabs`, `gemini`, `github-copilot`, `google-deepmind`, `grok`, `groq`, `hugging-face`, `langchain`, `meta-ai`, `midjourney`, `mistral-ai`, `ollama`, `openai`, `perplexity`, `stability-ai`, `windsurf` |
+| AI (`ai`) | 22 | `anthropic`, `chatgpt`, `claude`, `cohere`, `copilot`, `cursor`, `elevenlabs`, `gemini`, `github-copilot`, `google-deepmind`, `grok`, `groq`, `hugging-face`, `langchain`, `meta-ai`, `midjourney`, `mistral-ai`, `ollama`, `openai`, `perplexity`, `stability-ai`, `windsurf` |
 | Business & Marketing (`business-marketing`) | 23 | `algolia`, `amplitude`, `auth0`, `brevo`, `clerk`, `hotjar`, `hubspot`, `intercom`, `klaviyo`, `mailchimp`, `mixpanel`, `okta`, `optimizely`, `resend`, `salesforce`, `sendgrid`, `shopify`, `strapi`, `twilio`, `webflow`, `wordpress`, `zapier`, `zendesk` |
 | Cloud & DevOps (`cloud-devops`) | 22 | `ansible`, `aws`, `aws-lambda`, `circleci`, `cloudflare`, `datadog`, `digital-ocean`, `docker`, `google-cloud`, `grafana`, `heroku`, `jenkins`, `kubernetes`, `microsoft-azure`, `netlify`, `oracle`, `prometheus`, `railway`, `sentry`, `terraform`, `travis-ci`, `vercel` |
 | Database & Data (`database-data`) | 19 | `aws-dynamodb`, `cassandra`, `cockroachdb`, `databricks`, `drizzle`, `elasticsearch`, `firebase`, `google-bigquery`, `mariadb`, `mongodb`, `mysql`, `planetscale`, `postgresql`, `prisma`, `redis`, `sequelize`, `snowflake`, `sqlite`, `supabase` |
@@ -77,15 +70,15 @@ The category is part of the URL. Use the manifest or the catalog below to resolv
 
 ---
 
-## CDN Usage
+## CDN Usage (Zero Install)
 
 No installation is required. Load an asset directly through jsDelivr:
 
 ```text
-https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/brand-logos/src/{theme}/{colorway}/{format}/{category}/{variant}/{brand}.{format}
+https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/brand-logos/src/{theme}/{colorway}/{category}/{variant}/{brand}.svg
 ```
 
-For immutable production URLs, replace `@main` with a release tag after the assets are included in a release.
+For immutable production URLs, replace `@main` with a release tag or commit hash.
 
 ### HTML Example
 
@@ -93,13 +86,13 @@ For immutable production URLs, replace `@main` with a release tag after the asse
 <picture>
   <source
     media="(prefers-color-scheme: dark)"
-    srcset="https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/brand-logos/src/dark/colored/png/development/wordmark/github.png"
+    srcset="https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/brand-logos/src/dark/colored/development/wordmark/github.svg"
   />
   <img
-    src="https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/brand-logos/src/light/colored/png/development/wordmark/github.png"
+    src="https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/brand-logos/src/light/colored/development/wordmark/github.svg"
     alt="GitHub"
-    width="240"
-    height="64"
+    width="180"
+    height="48"
   />
 </picture>
 ```
@@ -109,42 +102,40 @@ For immutable production URLs, replace `@main` with a release tag after the asse
 ```tsx
 import Image from 'next/image';
 
-export default function BrandLogo() {
+interface BrandLogoProps {
+  brand: string;
+  category: string;
+  variant?: 'icon' | 'wordmark';
+  theme?: 'light' | 'dark';
+  colorway?: 'colored' | 'neutral';
+  width?: number;
+  height?: number;
+}
+
+export default function BrandLogo({
+  brand,
+  category,
+  variant = 'icon',
+  theme = 'light',
+  colorway = 'colored',
+  width = 24,
+  height = 24,
+}: BrandLogoProps) {
+  const src = `https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/brand-logos/src/${theme}/${colorway}/${category}/${variant}/${brand}.svg`;
+
   return (
     <Image
-      src="https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/brand-logos/src/light/colored/png/development/icon/github.png"
-      alt="GitHub"
-      width={64}
-      height={64}
+      src={src}
+      alt={`${brand} logo`}
+      width={width}
+      height={height}
+      unoptimized
     />
   );
 }
 ```
 
 When using the Next.js image optimizer, allow `cdn.jsdelivr.net` in your `next.config.js` or `next.config.mjs` remote image configuration.
-
----
-
-## SVG Coverage
-
-The following 20 brands also provide categorized SVG icon and wordmark files for both themes:
-
-`adobe`, `angular`, `anthropic`, `bitbucket`, `canva`, `claude`, `figma`, `framer`, `gemini`, `github`, `gitlab`, `google-deepmind`, `miro`, `nextjs`, `npm`, `openai`, `react`, `stack-overflow`, `tailwind-css`, `vue`
-
-Use the same canonical path template with `svg` as the format and extension.
-
----
-
-## Legacy URLs
-
-The original uncategorized 48px PNG and SVG URLs remain available for the initial 20-brand collection:
-
-```text
-src/{theme}/png/48px/{variant}/{brand}.png
-src/{theme}/svg/{variant}/{brand}.svg
-```
-
-These paths are retained for backward compatibility. New integrations should use the categorized canonical structure.
 
 ---
 

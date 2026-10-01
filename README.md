@@ -32,7 +32,7 @@ https://cdn.jsdelivr.net/gh/Radian-os/radian-resources@main/packages/{package-na
 ```
 
 - **`{package-name}`**: The subfolder name under `packages/` (e.g., `avatars`, `brand-logos`).
-- **`{file}`**: The path to the asset inside that package (e.g., `1.png`, `light/colored/png/development/icon/github.png`).
+- **`{file}`**: The path to the asset inside that package (e.g., `1.png`, `light/colored/development/icon/github.svg`).
 
 ---
 
@@ -44,7 +44,7 @@ This repository contains the following asset collections. Click on a category na
 | :--- | :--- | :--- |
 | **Avatars** | [packages/avatars](./packages/avatars/README.md) | 200 transparent, high-quality PNG user avatars for UI mocks. |
 | **Avatar Backgrounds** | [packages/avatars-background](./packages/avatars-background/README.md) | 58 solid, gradient, and image backgrounds for UI avatars. |
-| **Brand Logos** | [packages/brand-logos](./packages/brand-logos/README.md) | 244 categorized brands with colored PNG icons and wordmarks for light and dark themes, plus SVG coverage for 20 brands. |
+| **Brand Logos** | [packages/brand-logos](./packages/brand-logos/README.md) | 244 categorized brands with colored and neutral SVG icons and wordmarks for light and dark themes (1,952 total SVG assets). |
 | **Chart Thumbnails** | [packages/charts-thumbnail](./packages/charts-thumbnail/README.md) | Pre-rendered light and dark mode chart thumbnail previews. |
 | **Country Flags** | [packages/country-flags](./packages/country-flags/README.md) | 257 scalable SVG flags for countries, territories, regions, and organizations. |
 | **File Icons** | [packages/file-icons](./packages/file-icons/README.md) | Consistent, modern SVG file-type icons. |

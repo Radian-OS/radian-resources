@@ -1,62 +1,24 @@
 {
-  "version": 1,
-  "pathTemplate": "src/{theme}/{colorway}/{format}/{category}/{variant}/{brand}.{format}",
+  "version": 2,
+  "pathTemplate": "src/{theme}/{colorway}/{category}/{variant}/{brand}.svg",
   "themes": [
     "light",
     "dark"
   ],
-  "colorways": {
-    "available": [
-      "colored"
-    ],
-    "reserved": [
-      "black",
-      "white"
-    ]
-  },
-  "formats": {
-    "png": {
-      "brandCount": 244,
-      "assetCount": 976,
-      "variants": [
-        "icon",
-        "wordmark"
-      ],
-      "nominalDimensions": {
-        "icon": "64x64",
-        "wordmark": "240x64"
-      }
-    },
-    "svg": {
-      "brandCount": 20,
-      "assetCount": 80,
-      "variants": [
-        "icon",
-        "wordmark"
-      ],
-      "brands": [
-        "adobe",
-        "angular",
-        "anthropic",
-        "bitbucket",
-        "canva",
-        "claude",
-        "figma",
-        "framer",
-        "gemini",
-        "github",
-        "gitlab",
-        "google-deepmind",
-        "miro",
-        "nextjs",
-        "npm",
-        "openai",
-        "react",
-        "stack-overflow",
-        "tailwind-css",
-        "vue"
-      ]
-    }
+  "colorways": [
+    "colored",
+    "neutral"
+  ],
+  "format": "svg",
+  "brandCount": 244,
+  "assetCount": 1952,
+  "variants": [
+    "icon",
+    "wordmark"
+  ],
+  "nominalDimensions": {
+    "icon": "24x24",
+    "wordmark": "180x48"
   },
   "categories": [
     {
@@ -65,7 +27,7 @@
       "count": 22,
       "brands": [
         "anthropic",
-        "apple-intelligence",
+        "chatgpt",
         "claude",
         "cohere",
         "copilot",
